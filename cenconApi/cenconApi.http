@@ -1,0 +1,6 @@
+@cenconApi_HostAddress = http://localhost:5163
+
+GET {{cenconApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
