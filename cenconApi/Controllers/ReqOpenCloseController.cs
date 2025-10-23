@@ -60,6 +60,7 @@ namespace cenconApi.Controllers
                         WSID = request.WSID,
                         Tanggal = DateTime.Now.Date,
                         Jam = DateTime.Now,
+                        Status = "Order Open",
                         created = username,
                         createdat = DateTime.Now,
                         // nilai optional dibiarkan null (tidak perlu set string.Empty)
@@ -124,6 +125,7 @@ namespace cenconApi.Controllers
                     entity.JReqClose = request.JReqClose;
                     entity.KDClose = request.KDClose;
                     entity.updated = username;
+                    entity.Status = "Order Close";
                     entity.updatedat = DateTime.Now;
 
                     await _context.SaveChangesAsync();

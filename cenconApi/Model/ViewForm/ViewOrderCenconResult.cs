@@ -13,5 +13,6 @@
         public string? Lokasi { get; set; }
         public string? Mesin { get; set; }
         public string? NMCABANG { get; set; }
+        public string? Status { get; set; }
     }
 }

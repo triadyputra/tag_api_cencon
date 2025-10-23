@@ -12,7 +12,7 @@ using cenconApi.Data;
 namespace cenconApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251022140640_initial-database")]
+    [Migration("20251023035724_initial-database")]
     partial class initialdatabase
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace cenconApi.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.4")
+                .HasAnnotation("ProductVersion", "9.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -53,6 +53,9 @@ namespace cenconApi.Migrations
                         .HasMaxLength(15)
                         .HasColumnType("nvarchar(15)");
 
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("Tanggal")
                         .HasColumnType("datetime2");
 
@@ -82,6 +85,48 @@ namespace cenconApi.Migrations
                     b.HasIndex("WSID");
 
                     b.ToTable("ReqOpenClose");
+                });
+
+            modelBuilder.Entity("cenconApi.Model.ViewForm.ViewOrderCenconResult", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("JReqClose")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("JReqOpen")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Jam")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("KDClose")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Lokasi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Mesin")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NMCABANG")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NOWO")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Tanggal")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("WSID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.ToTable((string)null);
+
+                    b.ToView(null, (string)null);
                 });
 #pragma warning restore 612, 618
         }

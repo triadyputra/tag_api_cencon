@@ -22,6 +22,7 @@ namespace cenconApi.Migrations
                     JReqOpen = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
                     JReqClose = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
                     KDClose = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
+                    Status = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Tanggal = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Jam = table.Column<DateTime>(type: "datetime2", nullable: false),
                     created = table.Column<string>(type: "nvarchar(max)", nullable: true),

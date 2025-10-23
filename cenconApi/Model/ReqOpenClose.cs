@@ -26,6 +26,7 @@ namespace cenconApi.Model
 
         [MaxLength(10)]
         public string? KDClose { get; set; } //= string.Empty;
+        public string? Status { get; set; } //= string.Empty;
 
         public DateTime Tanggal { get; set; }
 
